@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="../static/css/background.css">
+    <style>
+       *{
+  box-sizing: border-box;
+}
+
+body {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  padding-top: 80px;
+  height: 1900px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+@supports (position: sticky) {
+  body {
+    padding-top: 0;
+  }
+
+  header {
+    position: sticky;
+  }
+
+}
+
+.navbar {
+  position: relative;
+  height: 80px;
+  width: 100%;
+  transition: 0.5s ease;
+}
+
+.navbar .nav {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: right;
+  margin-right: 5%;
+}
+
+.navbar .nav .item {
+  list-style: none;
+  display: inline-block;
+  font-size: 18px;
+  padding: 5px;
+  font-weight: 300;
+  line-height: 80px;
+  margin-right: 20px;
+  transition: 0.5s ease;
+}
+
+.navbar .nav .item .contact {
+  display: inline-block;
+  background-color: #ffffff;
+  height: 40px;
+  line-height: 30px;
+  padding: 5px;
+  border-radius: 2px;
+  transition: 0.5s ease;
+}
+
+.navbar .nav .item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar .logo {
+  float: left;
+  display: inline-block;
+  margin-top: 5px;
+  margin-left: 5%;
+  width: 70px;
+  height: 70px;
+  background-color: firebrick;
+  transition: 0.5s ease;
+}
+
+.navbar .logo img {
+  display: none;
+}
+
+.scrolled {
+ transition: 0.5s ease;
+}
+
+.scrolled.navbar {
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: 0.5s ease;
+
+}
+
+.scrolled.navbar .nav .item {
+  line-height: 40px;
+  transition: 0.5s ease;
+}
+
+.scrolled.navbar .nav .item .contact {
+  display: inline-block;
+  background-color: #ffffff;
+  height: 40px;
+  line-height: 30px;
+  padding: 5px;
+  border-radius: 2px;
+  transition: 0.5s ease;
+}
+
+.scrolled.navbar .logo {
+  float: left;
+  display: inline-block;
+  margin-top: 5px;
+  margin-left: 5%;
+  width: 40px;
+  height: 40px;
+  background-color: firebrick;
+  transition: 0.5s ease;
+}
+    </style>
+<script>
+$(document).ready(function() {
+      $(window).on('scroll', function() {
+        if (Math.round($(window).scrollTop()) > 100) {
+          $('.navbar').addClass('scrolled');
+        } else {
+          $('.navbar').removeClass('scrolled');
+        }
+      });
+    });
+</script>
+</head>
+<body>
+<div class="navbar">
+        <ul class="nav">
+          <li class="item">
+            <a href="#">Home</a>
+          </li>
+
+          <li class="item">
+            <a href="FindLoans.html">Find Loans</a>
+          </li>
+
+          <li class="item">
+            <a href="Calculator.html">Calculator </a>
+          </li>
+
+          <li class="item">
+            <a href="Tips.html">Tips on Loans</a>
+          </li>
+
+            <li class="item">
+            <a href="#">About</a>
+          </li>
+
+            <li class="item">
+            <a href="HomePage.html">Logout</a>
+          </li>
+        </ul>
+
+        <div class="logo">
+          <img src="#">
+        </div>
+      </div>
+    </header>
+<h1>Welcome Back!</h1>
+<h2>Loans summary:</h2>
+<form>
+  <input type="text" name="search" placeholder="Search..">
+</form>
+<div class="top">
+    <div class="loan-summary">
+        <table>
+        <tr>
+            <td>OCBC’s New Home Loan Package<br> Amount left: $450000</td>
+        </tr>
+        <tr>
+            <td>DBS Car Loan<br> Amount left:$195435</td>
+        </tr>
+        <tr>
+            <td>UOB Personal Loan<br>Amount left:$9562</td>
+        </tr>
+        </table>
+    </div>
+    <div class="reminder">
+        <p>You Have <a href="#">1</a> instalment to be repaid this month</p>
+        <table>
+            <tr>
+                <td>OCBC’s New Home Loan Package<br> Instalment amount:$1000</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="latepayment">
+    <p>OVERDUE PAYMENT</p>
+    <table>
+        <tr>
+            <td>DBS Car Loan<br>Instalment amount:$800<br> Late payment penalty:$100</td>
+        </tr>
+    </table>
+</div>
+<div class="Summary">
+    <p>SUMMARY</p>
+    <img src="../static/images/graph.PNG">
+    <img src="../static/images/graph2.PNG">
+</div>
+<div class="rewards">
+    <h3>Rewards</h3>
+    <p>You have 1500 points for paying instalment on time</p>
+    <div class="insiderewards">
+        <div class="points">
+            <img src="../static/images/rewards.PNG">
+        </div>
+        <div class="awards">
+            <p id="redeem">Rewards that you can redeem:</p>
+            <img src="../static/images/popular.jpg">
+            <img src="../static/images/grab.jpeg">
+        </div>
+
+    </div>
+</div>
+
+{% include 'includes/_footer.html' %}
+</body>
+</html>

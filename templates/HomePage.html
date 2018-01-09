@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="../static/css/background1.css">
+</head>
+<script>
+$(document).ready(function() {
+      $(window).on('scroll', function() {
+        if (Math.round($(window).scrollTop()) > 100) {
+          $('.navbar').addClass('scrolled');
+        } else {
+          $('.navbar').removeClass('scrolled');
+        }
+      });
+    });
+</script>
+<body>
+      <div class="navbar">
+        <ul class="nav">
+          <li class="item">
+            <a href="#">Home</a>
+          </li>
+
+          <li class="item">
+            <a href="FindLoans.html">Find Loans</a>
+          </li>
+
+          <li class="item">
+            <a href="Calculator.html">Calculator </a>
+          </li>
+
+          <li class="item">
+            <a href="Tips.html">Tips on Loans</a>
+          </li>
+
+            <li class="item">
+            <a href="#">About</a>
+          </li>
+
+            <li class="item">
+            <a href="HomePage.html">Login</a>
+          </li>
+        </ul>
+
+        <div class="logo">
+          <img src="#">
+        </div>
+      </div>
+
+<h2 id="header"> Welcome to Loans Helper!</h2>
+<div class="loans">
+<h2 id="search">Search and compare loans:</h2>
+    <form>
+        <input type="text" name="search" placeholder="Search..">
+    </form>
+</div>
+<div class="Rates">
+    <div class="house">
+        <p>Latest Housing Loan from as Low as</p>
+        <table style="width:50%">
+            <tr>
+                <td>Floating <span style="color: blue">Rate type</span> </td>
+                <td>1.48% <span style="color: blue">Interest Rate</span></td>
+            </tr>
+            <tr>
+                <td>Fixed <span style="color: blue">Rate type</span></td>
+                <td>1.99% <span style="color: blue">Interest Rate</span></td>
+            </tr>
+        </table>
+        <button class="button">Compare Home Loan Rates</button>
+    </div>
+    <div class="personal">
+        <p>Lastest personal Loan from as Low as</p>
+        <table style="width:50%">
+            <tr>
+                <td>4.55% <span style="color: blue">Interest Rate</span> </td>
+                <td>3 Years <span style="color: blue">Loan Tenure</span></td>
+            </tr>
+        </table>
+        <button class="button">Compare Personal Loan Rates</button>
+    </div>
+</div>
+</body>
+</html>
